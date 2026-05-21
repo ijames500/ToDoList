@@ -224,6 +224,13 @@ Feature: Manage To-Do Items
     And I change the title to "Buy organic groceries"
     And I click "Save"
     Then I should see "Buy organic groceries" in the task list
+
+  Scenario: User cannot create an empty task
+  Given I am on the task list page
+  When I leave the task title field empty
+  And I click "Add Task"
+  Then I should see an error message "Task title is required"
+  And the task should not be added to the list
 ```
 
 ---
