@@ -225,12 +225,12 @@ Feature: Manage To-Do Items
     And I click "Save"
     Then I should see "Buy organic groceries" in the task list
 
-  Scenario: User cannot create an empty task
-  Given I am on the task list page
-  When I leave the task title field empty
-  And I click "Add Task"
-  Then I should see an error message "Task title is required"
-  And the task should not be added to the list
+  Scenario: User cannot create an empty task  ผู้ใช้ไม่สามารถสร้างงานว่างได้
+    Given I am on the task list page          ขณะที่ฉันอยู่ในหน้ารายการงาน
+    When I leave the task title field empty   เมื่อฉันเว้นช่องชื่อหัวข้องานว่างไว้
+    And I click "Add Task"                    และคลิก "เพิ่มงาน"
+    Then I should see an error message "Task title is required" ฉันควรเห็นข้อความแสดงข้อผิดพลาด "จำเป็นต้องระบุชื่อหัวข้องาน"
+    And the task should not be added to the list และงานนั้นไม่ควรถูกเพิ่มลงในรายการ
 ```
 
 ---
